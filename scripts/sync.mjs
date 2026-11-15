@@ -1,0 +1,1 @@
+import{writeFile,mkdir}from'node:fs/promises';import{refresh}from'./catalogue.mjs';await mkdir('dist',{recursive:true});const data=await refresh();await writeFile('dist/catalogue.json',JSON.stringify(data));console.log(JSON.stringify({heroes:data.heroes.length,souls:data.souls.length,checkedAt:data.checkedAt}));
